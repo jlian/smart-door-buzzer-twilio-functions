@@ -28,7 +28,7 @@ I kind of went overboard I think, given my original goal. But this was actually 
 [Twilio Functions](https://www.twilio.com/functions) is pretty sweet. It's completely serverless so you don't need a VM or computer to keep running an app. It's perfect for something small scale like your apartment buzzer. The flow of this program goes like this:
 
 1. A call comes to the Twilio phone number, `buzzer-activated.js` runs.
-1. The [<Gather>](https://www.twilio.com/docs/api/twiml/gather) verb is used to get either a voice password or a 4-digit PIN.
+1. The [Gather](https://www.twilio.com/docs/api/twiml/gather) verb is used to get either a voice password or a 4-digit PIN.
 1. If either a voice password or PIN is correct, `door-open.js` dials a `9` to the buzzer (my building's buzzer code, yours may be different), which opens the door.
 1. If no password is entered after 2 seconds or is incorrect, `call-residents.js` calls all the residents until someone picks up and manually dial `9` to open the door.
 1. When the above are done, `text-me.js` texts a specified number with info on what happened.
