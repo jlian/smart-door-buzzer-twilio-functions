@@ -1,10 +1,16 @@
 exports.handler = function(context, event, callback) {
   let twiml = new Twilio.twiml.VoiceResponse();
-
-  console.log('Speech: ' + event.SpeechResult + '. Confidence: ' + event.Confidence)
+  
+  // Get rid of random non-alphabetical chars and put to lower case
+  var cleanString = event.SpeechResult.replace(/[^\w\s]|_/g, "")
+                    .replace(/\s+/g, " ");
+  var cleanSpeechResult = cleanString.toLowerCase();
+  
+  console.log('Speech: ' + cleanSpeechResult + '; confidence: ' + event.Confidence)
   console.log('Digits: ' + event.Digits)
-    
-  if ( (event.SpeechResult == context.PASSPHRASE && event.Confidence > 0.5) || event.Digits == context.PASSCODE) {
+  
+  if ( (cleanSpeechResult == context.PASSPHRASE && event.Confidence > 0.5) 
+          || event.Digits == context.PASSCODE) {
     // Check if we have a password match, and open the door
     twiml.say({voice: 'man'}, 'Nice! fam!')
     twiml.play({digits: '9'}) // Pressing 9 sends DTFM tone to open the door
