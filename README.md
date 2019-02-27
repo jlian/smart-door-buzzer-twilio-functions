@@ -4,6 +4,7 @@ I wanted to make my apartment buzzer acessible without a physical key, so I crea
 
 * Voice password (make your friends shout stupid things in public to get into your building!)
 * PIN password, a classic
+* No obvious weirdness or extra waiting for first-time guests or delivery people
 * Notify multiple people until someone picks up the phone - as long as one of the roommates pick up, you won't miss your package
 
 I kind of went overboard I think, given my original goal. But this was actually *really* easy to develop and set up. And also really cheap.
