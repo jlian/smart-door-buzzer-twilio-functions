@@ -37,3 +37,7 @@ I kind of went overboard I think, given my original goal. But this was actually 
 ## How much this costs
 
 According to Twilio docs, collecting speech is charged at $.02 per 15 seconds. A Twilio number costs $1/month. Looking at my own billing dashboard, it never exceeds $2/month - pretty reasonable. 
+
+## More details
+
+See [State of my home automation in 2018](https://johnlian.net/posts/home-automation-2018/).
